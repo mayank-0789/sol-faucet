@@ -13,6 +13,7 @@ import '@solana/wallet-adapter-react-ui/styles.css';
 import Balance from './Balance';
 import SignMessage from './SignMessage';
 import SendToken from './SendToken';
+
 // Dynamic imports to prevent hydration errors
 const WalletMultiButtonDynamic = dynamic(
   async () => (await import('@solana/wallet-adapter-react-ui')).WalletMultiButton,

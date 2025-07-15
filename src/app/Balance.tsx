@@ -6,7 +6,6 @@ export default function Balance() {
     const { connection } = useConnection();
 
     async function getBalance() {
-
         
         if (!wallet.publicKey) {
             alert("Please connect your wallet first!");

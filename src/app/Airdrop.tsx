@@ -19,24 +19,13 @@ export default function Airdrop() {
 
         try {
             const lamports = parseFloat(amount) * 1000000000; // Convert SOL to lamports
-            
-            console.log("🚀 Requesting airdrop...");
-            console.log("Wallet address:", wallet.publicKey.toString());
-            console.log("Amount (lamports):", lamports);
-            console.log("RPC endpoint:", connection.rpcEndpoint);
-            
+          
             const signature = await connection.requestAirdrop(wallet.publicKey, lamports);
-            console.log("✅ Airdrop signature:", signature);
             
             alert(`🎉 Airdrop of ${amount} SOL requested successfully!\nCheck your wallet in a few seconds.`);
             setAmount("0.1"); // Reset to default
             
         } catch (error: any) {
-            console.error("❌ Detailed airdrop error:", error);
-            console.error("Error code:", error.code);
-            console.error("Error message:", error.message);
-            console.error("Full error object:", JSON.stringify(error, null, 2));
-            
             if (error.message?.includes("429") || error.code === 429) {
                 alert("⏰ Rate limited by RPC. Wait 5-10 minutes or try https://faucet.solana.com");
             } else if (error.message?.includes("insufficient") || error.message?.includes("balance")) {
