@@ -6,13 +6,18 @@ export default function Balance() {
     const { connection } = useConnection();
 
     async function getBalance() {
-        if (wallet.publicKey) {
-            const balance = await connection.getBalance(wallet.publicKey);
-            const solBalance = balance / LAMPORTS_PER_SOL;
-            const balanceElement = document.getElementById("balance");
-            if (balanceElement) {
-                balanceElement.innerHTML = solBalance.toFixed(3);
-            }
+
+        
+        if (!wallet.publicKey) {
+            alert("Please connect your wallet first!");
+            return;
+        }
+
+        const balance = await connection.getBalance(wallet.publicKey);
+        const solBalance = balance / LAMPORTS_PER_SOL;
+        const balanceElement = document.getElementById("balance");
+        if (balanceElement) {
+            balanceElement.innerHTML = solBalance.toFixed(3);
         }
     }
 
