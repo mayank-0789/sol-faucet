@@ -51,12 +51,14 @@ export default function Wallet() {
                   Connect your wallet and request devnet SOL for testing
                 </p>
                 
-                <div className="flex items-center justify-center space-x-4">
+                <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
                   <span className="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-green-100 text-green-800">
                     🟢 Devnet
                   </span>
-                  <WalletMultiButtonDynamic />
-                  <WalletDisconnectButtonDynamic />
+                  <div className="flex items-center gap-2">
+                    <WalletMultiButtonDynamic />
+                    <WalletDisconnectButtonDynamic />
+                  </div>
                 </div>
               </div>
 
