@@ -55,7 +55,7 @@ export default function Airdrop() {
         <div className="space-y-6">
             
             {/* Amount Input */}
-    <div>
+         <div>
                 <label className="block text-sm font-medium text-gray-300 mb-3">
                     Amount (SOL)
                 </label>

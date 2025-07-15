@@ -10,7 +10,8 @@ import { clusterApiUrl } from '@solana/web3.js';
 import dynamic from 'next/dynamic';
 import Airdrop from './Airdrop';
 import '@solana/wallet-adapter-react-ui/styles.css';
-
+import Balance from './Balance';
+import SignMessage from './SignMessage';
 // Dynamic imports to prevent hydration errors
 const WalletMultiButtonDynamic = dynamic(
   async () => (await import('@solana/wallet-adapter-react-ui')).WalletMultiButton,
@@ -75,7 +76,20 @@ export default function Wallet() {
                     <p className="text-gray-400">Get free SOL for testing on devnet</p>
                   </div>
                   
+                  <Balance />
+                  
+                  <div className="border-t border-gray-700 my-6"></div>
+                  
                   <Airdrop />
+                  
+                  <div className="border-t border-gray-700 my-6"></div>
+                  
+                  <div className="text-center mb-4">
+                    <h3 className="text-xl font-bold text-white mb-2">Sign Message</h3>
+                    <p className="text-gray-400 text-sm">Sign a message with your wallet</p>
+                  </div>
+                  
+                  <SignMessage />
                 </div>
               </div>
 
