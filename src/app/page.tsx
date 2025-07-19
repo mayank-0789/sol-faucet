@@ -13,6 +13,7 @@ import '@solana/wallet-adapter-react-ui/styles.css';
 import Balance from './Balance';
 import SignMessage from './SignMessage';
 import SendToken from './SendToken';
+import TokenLaunchpad from './TokenLaunchpad';
 
 // Dynamic imports to prevent hydration errors
 const WalletMultiButtonDynamic = dynamic(
@@ -128,6 +129,8 @@ export default function Wallet() {
               </div>
 
             </div>
+
+            <TokenLaunchpad />
             
           </WalletModalProvider>
         </WalletProvider>
