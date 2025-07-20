@@ -26,6 +26,7 @@ export default function SignMessage() {
         const signatureString = bs58.encode(signature);
         if(ed25519.verify(signature, messageBytes, publicKey.toBytes())) {
             alert(`Success! Signature: ${signatureString}`);
+            console.log(signatureString);
         } else {
             alert('Error: Invalid signature');
         }
