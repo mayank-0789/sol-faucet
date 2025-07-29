@@ -19,7 +19,7 @@ export default function Balance() {
             balanceElement.innerHTML = solBalance.toFixed(3);
         }
     }
-
+ 
     return (
         <div className="text-center py-4">
             <p className="text-gray-300">SOL Balance: <span id="balance">0.000</span></p>
