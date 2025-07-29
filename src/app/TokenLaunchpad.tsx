@@ -352,7 +352,7 @@ export default function TokenLaunchpad() {
                     className={`w-full py-2 px-4 rounded-lg font-medium transition-colors ${
                         isLoading || !wallet.connected
                             ? 'bg-gray-600 text-gray-400 cursor-not-allowed'
-                            : 'bg-orange-500 text-white hover:bg-orange-600'
+                            : 'bg-purple-500 text-white hover:bg-purple-600'
                     }`}
                 >
                     {isLoading ? (
@@ -389,7 +389,7 @@ export default function TokenLaunchpad() {
                                     </div>
                                     <button
                                         onClick={() => copyToClipboard(token.mintAddress)}
-                                        className="text-orange-400 hover:text-orange-300 text-xs"
+                                        className="text-purple-400 hover:text-purple-300 text-xs"
                                     >
                                         Copy
                                     </button>
@@ -399,7 +399,7 @@ export default function TokenLaunchpad() {
                                     href={`https://explorer.solana.com/tx/${token.signature}?cluster=devnet`}
                                     target="_blank"
                                     rel="noopener noreferrer"
-                                    className="text-orange-400 hover:text-orange-300 text-xs"
+                                    className="text-purple-400 hover:text-purple-300 text-xs"
                                 >
                                     View on Explorer →
                                 </a>
